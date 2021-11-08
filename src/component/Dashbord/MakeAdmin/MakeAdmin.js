@@ -13,7 +13,7 @@ const MakeAdmin = () => {
   const handleAdmin = (e) => {
     const user = { email };
     e.preventDefault();
-    fetch("http://localhost:5000/users/admin", {
+    fetch("https://radiant-beyond-52380.herokuapp.com/users/admin", {
       method: "PUT",
       headers: {
         authorization: `Bearer ${token}`,

@@ -56,7 +56,7 @@ const Mymodal = ({
       service: name,
     };
     // send to server
-    fetch("http://localhost:5000/appointments", {
+    fetch("https://radiant-beyond-52380.herokuapp.com/appointments", {
       method: "POST",
       headers: {
         "content-type": "application/json",

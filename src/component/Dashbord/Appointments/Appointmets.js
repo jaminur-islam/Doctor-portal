@@ -17,7 +17,7 @@ const Appointmets = ({ dateValue }) => {
   const [appointments, setAppointments] = useState([]);
   useEffect(() => {
     fetch(
-      `http://localhost:5000/appointments?email=${user.email}&date=${date}`,
+      `https://radiant-beyond-52380.herokuapp.com/appointments?email=${user.email}&date=${date}`,
       {
         headers: {
           authorization: `Bearer ${token}`,

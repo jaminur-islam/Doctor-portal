@@ -72,7 +72,7 @@ const useFirebase = () => {
 
   // getAdmin
   useEffect(() => {
-    fetch(`http://localhost:5000/users/${user.email}`)
+    fetch(`https://radiant-beyond-52380.herokuapp.com/users/${user.email}`)
       .then((res) => res.json())
       .then((result) => {
         setAdmin(result.admin);
@@ -82,7 +82,7 @@ const useFirebase = () => {
   // post user
   const handleUser = (name, email, method) => {
     const user = { name, email };
-    fetch("http://localhost:5000/users", {
+    fetch("https://radiant-beyond-52380.herokuapp.com/users", {
       method: method,
       headers: {
         "content-type": "application/json",
