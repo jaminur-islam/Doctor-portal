@@ -1,24 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import "./App.css";
+import Appointment from "./component/Appointment/Appointment/Appointment";
+import ContextProvider from "./component/Context/ContextProvider";
+import Dashbord from "./component/Dashbord/Dashbord/Dashbord";
+import Home from "./component/HOMe/Home/Home";
+import Login from "./component/Login/Login/Login";
+import PrivetRouter from "./component/Login/PrivetRouter/PrivetRouter";
+import Ragister from "./component/Login/Ragister/Ragister";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ContextProvider>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/home">
+            <Home></Home>
+          </Route>
+          <Route exact path="/">
+            <Home></Home>
+          </Route>
+          <PrivetRouter path="/appointment">
+            <Appointment></Appointment>
+          </PrivetRouter>
+          <PrivetRouter path="/dashbord">
+            <Dashbord></Dashbord>
+          </PrivetRouter>
+          <Route path="/login">
+            <Login></Login>
+          </Route>
+          <Route path="/register/:location">
+            <Ragister> </Ragister>
+          </Route>
+        </Switch>
+      </BrowserRouter>
+    </ContextProvider>
   );
 }
 
