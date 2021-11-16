@@ -14,7 +14,7 @@ const CheckOutForm = ({appointment}) => {
   const [processing ,setProcessing]=useState(false)
 
   useEffect(()=>{
-    fetch('http://localhost:5000/create-payment-intent' , {
+    fetch('https://radiant-beyond-52380.herokuapp.com/create-payment-intent' , {
       method: 'POST',
       headers:  {
         'content-type' : 'application/json'
@@ -80,7 +80,7 @@ const CheckOutForm = ({appointment}) => {
       }
 
       
-      fetch(`http://localhost:5000/appointment/payment/${_id}` , {
+      fetch(`https://radiant-beyond-52380.herokuapp.com/appointment/payment/${_id}` , {
         method : 'put',
         headers: {
           'content-type' : 'application/json'
