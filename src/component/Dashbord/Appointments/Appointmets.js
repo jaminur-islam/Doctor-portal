@@ -9,12 +9,14 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import { Link } from "react-router-dom";
 
 const Appointmets = ({ dateValue }) => {
   const date = dateValue.toLocaleDateString();
   console.log(date);
   const { user, token } = useAuth();
   const [appointments, setAppointments] = useState([]);
+  console.log(appointments)
   useEffect(() => {
     fetch(
       `https://radiant-beyond-52380.herokuapp.com/appointments?email=${user.email}&date=${date}`,
@@ -52,11 +54,12 @@ const Appointmets = ({ dateValue }) => {
               <TableCell>Time</TableCell>
               <TableCell>Service</TableCell>
               <TableCell>Date</TableCell>
+              <TableCell>Action </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {appointments?.map((appointment) => (
-              <TableRow
+                    <TableRow
                 key={appointment?._id}
                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
               >
@@ -66,8 +69,12 @@ const Appointmets = ({ dateValue }) => {
                 <TableCell>{appointment.time}</TableCell>
                 <TableCell>{appointment.service}</TableCell>
                 <TableCell>{appointment.date}</TableCell>
+                <TableCell
+                > {appointment.payment? "paid":
+                <button> <Link to={`dashboard/payment/${appointment._id}`}> pay </Link></button>
+                } </TableCell>
               </TableRow>
-            ))}
+            ))} 
           </TableBody>
         </Table>
       </TableContainer>

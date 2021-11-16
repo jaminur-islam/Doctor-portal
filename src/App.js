@@ -22,7 +22,7 @@ function App() {
           <PrivetRouter path="/appointment">
             <Appointment></Appointment>
           </PrivetRouter>
-          <PrivetRouter path="/dashbord">
+          <PrivetRouter path="/dashboard">
             <Dashbord></Dashbord>
           </PrivetRouter>
           <Route path="/login">

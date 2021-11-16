@@ -23,7 +23,7 @@ const Mymodal = ({
   dateValue,
   setBookSuccess,
 }) => {
-  const { time, name } = appointmentTime;
+  const { time, name , price } = appointmentTime;
   console.log(name);
 
   const { user } = useAuth();
@@ -54,6 +54,7 @@ const Mymodal = ({
       time,
       date: dateValue.toLocaleDateString(),
       service: name,
+      price: price
     };
     // send to server
     fetch("https://radiant-beyond-52380.herokuapp.com/appointments", {

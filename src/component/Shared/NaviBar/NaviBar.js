@@ -46,7 +46,7 @@ const NaviBar = () => {
             <Link
               style={{ textDecoration: "none", marginLeft: "10px" }}
               color="inherit"
-              to="/dashbord"
+              to="/dashboard"
             >
               Dashbord
             </Link>

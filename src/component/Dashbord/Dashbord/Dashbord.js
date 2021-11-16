@@ -6,12 +6,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Divider from "@mui/material/Divider";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
 import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import MailIcon from "@mui/icons-material/Mail";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
@@ -22,6 +17,7 @@ import MakeAdmin from "../MakeAdmin/MakeAdmin";
 import AddDoctor from "../AddDoctor/AddDoctor";
 import useAuth from "../../Hooks/useAuth";
 import AdminRoute from "../../Login/AdminRoute/AdminRoute";
+import Payment from "../Payment/Payment";
 
 const drawerWidth = 200;
 
@@ -35,7 +31,6 @@ function Dashbord(props) {
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-
   const drawer = (
     <div>
       <Toolbar />
@@ -56,7 +51,7 @@ function Dashbord(props) {
             </Link>
           </li>
           <li>
-            <Link to={`${url}/dashbord`}>Dashbord</Link>
+            <Link to={`${url}`}>Dashbord</Link>
           </li>
           {admin && (
             <Box>
@@ -155,12 +150,12 @@ function Dashbord(props) {
       >
         <Toolbar />
         <Switch>
-          <Route path={`${path}/dashbord`}>
+          <Route exact path={`${path}`}>
             <DashbordHome> </DashbordHome>
           </Route>
 
-          <Route exact path={`${path}`}>
-            <DashbordHome> </DashbordHome>
+          <Route  path={`${path}/payment/:id`}>
+            <Payment></Payment>
           </Route>
 
           <AdminRoute path={`${path}/makeAdmin`}>

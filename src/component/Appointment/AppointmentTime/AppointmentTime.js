@@ -7,36 +7,42 @@ const appointmentTime = [
     name: "Teeth Orthodontics",
     time: "8:00 AM - 9:00AM",
     space: "10 spaces available",
+    price: 20,
   },
   {
     id: 2,
     name: "Cosmetic Dentistry",
     time: "10:05 AM - 11:30AM",
     space: "10 spaces available",
+    price: 17,
   },
   {
     id: 3,
     name: "Teeth Teeth Cleaning",
     time: "5:00 AM - 6:30AM",
     space: "10 spaces available",
+    price: 17,
   },
   {
     id: 4,
     name: "Cavity Protection",
     time: "7:00 AM - 8:30AM",
     space: "10 spaces available",
+    price: 12,
   },
   {
     id: 5,
     name: "Teeth Orthodontics",
     time: "8:00 AM - 9:00AM",
     space: "10 spaces available",
+    price: 18,
   },
   {
     id: 6,
     name: "Teeth Cleaning",
     time: "8:00 AM - 9:00AM",
     space: "10 spaces available",
+    price: 23
   },
 ];
 

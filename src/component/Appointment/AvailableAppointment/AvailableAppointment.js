@@ -7,8 +7,9 @@ const AvailableAppointment = ({
   appointmentTime,
   dateValue,
   setBookSuccess,
+ 
 }) => {
-  const { name, space, time } = appointmentTime;
+  const { name, space, time , price } = appointmentTime;
   const [openModal, setOpenModal] = React.useState(false);
 
   return (
@@ -23,13 +24,16 @@ const AvailableAppointment = ({
         <Typography variant="h6" sx={{ fontSize: "12px" }}>
           {space}
         </Typography>
+        <Typography variant="h6" sx={{ fontSize: "12px" }}>
+          price: $ {price}
+        </Typography>
         <Button
           onClick={() => setOpenModal(true)}
           sx={{ mt: 1 }}
           variant="contained"
         >
-          {" "}
-          Book AppointMent{" "}
+          
+          Book AppointMent
         </Button>
       </Box>
       <Mymodal
